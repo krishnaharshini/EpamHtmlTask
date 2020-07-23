@@ -1,0 +1,84 @@
+<html>
+<head>
+  <title>Register</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="bootstrap.min.css">
+  <script>
+      function validateForm(){
+         first_name=document.getElementById("fname").value;
+          last_name=document.getElementById("lname").value;
+        email=document.getElementById("email");
+        phone_number=document.getElementById("phone").value;
+        
+        var pattern_name=/[^a-zA-Z]/;
+        var matched_pattern=first_name.match(pattern_name);
+        
+        if(matched_pattern!=null){
+        alert("First Name should contain only alphabets");
+        return false;
+        }
+        matched_pattern=last_name.match(pattern_name);
+        if(matched_pattern!=null){
+        alert("Last name should contain only alphabets");
+        return false;
+        }
+        var pattern_phone=/[^0-9]/;
+        matched_pattern=phone_number.match(pattern_phone);
+        if(matched_pattern!=null || phone_number.length>10)
+        {
+            alert("Enter a valid phone number");
+            return false;
+        }
+
+
+          
+          
+               }
+  </script>
+  </head>
+  <body>
+     <div class="container">
+         <div class="row row-content align-items-center">
+            <div class="col-12 col-sm-6 offset-sm-3">
+                <div class="page-header">
+                   <h4>Register here</h4>
+                </div>
+                <form onsubmit="validateForm()" name="myForm">
+                    <div class="form-group row">
+                        <label for="FirstName" class="col-sm-2"><h4>FirstName</h4></label>
+                        <input class=" col-sm-6 " type="text" name="firstname" id="fname" placeholder="First Name" required>
+                    </div>
+                    <div class="form-group row">
+                        <label for="LastName" class="col-sm-2 "><h4>LastName</h4></label>
+                        <input class="col-sm-6 " type="text" name="lastname" id="lname" placeholder="Last Name" required>
+                    </div>
+                    <div class="form-group row">
+                        <label for="email" class="col-sm-2"><h4>Email</h4></label>
+                        <input class="col-sm-6 " type="email" name="email" id="email" placeholder="Email" required>
+                    </div>
+                    <div class="form-group row">
+                        <label for="phone" class="col-sm-2 "><h4>Phone number</h4></label>
+                        <input class="col-sm-6 " type="text" name="phone" id="phone" placeholder="Phone number" required>
+
+                       </div>
+                    <div class="form-group row">
+                        <label for="FirstName" class="col-sm-2 "><h4>Date Of Birth</h4></label>
+                        <input class="col-sm-6 " type="date" name="dob" id="dob" placeholder="DOB" required>
+
+                       </div>
+                       <div class="row">
+                        <div class="col-sm-2"></div>
+                        <div class="col-sm-3">
+                            <button type="submit" class="btn btn-primary"><h4>Register</h4></button>
+                        </div>
+                        </div>
+                    </form>
+                    </div>
+         </div>
+         
+     </div>
+  </body>
+</html>
